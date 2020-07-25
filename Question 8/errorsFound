@@ -1,0 +1,23 @@
+1. The deployment Selector labels must match with the Service selector labels:
+    matchLabels:
+      app: guestbook-web
+      tier: frontend
+    Instead of guestbook value in app key-value pair
+
+    As well as the template labels, as both are use to establish a connection between the deployment and the service:
+     template:
+    metadata:
+      labels:
+        app: guestbook-web
+        tier: frontend
+2. Services should not contain labels
+3. wrong order of server configuration file: selector data should be above Ports
+4. Service Target Port must be the same as the container port (target port has been set as por 80 by default):
+      ports:
+        - port: 80
+        - targetPort: 8080
+5. By convention, I would change  the deployment Name to frontend-deployment and the service to frontend-service
+6.  Double quotes for the environment variable value:
+          env:
+        - name: GET_HOSTS_FROM
+          value: "dns"
