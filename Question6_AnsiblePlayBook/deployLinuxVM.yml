@@ -92,7 +92,7 @@
               ssh_password_enabled: false
               ssh_public_keys:
                 - path: /home/azureuser/.ssh/authorized_keys
-                  key_data: <your-key-data>
+                  key_data: "here insert ssh key data"
               network_interfaces: nic-cs-web
               image:
                 offer: CentOS
